@@ -1,6 +1,22 @@
+
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+.Rapp.history
+
 
 /.quarto/
+*_cache/
+*_files/
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+data/raw/*
+data/clean/*.csv
+!data/raw/.gitkeep
+
+.DS_Store
+.DS_Store?

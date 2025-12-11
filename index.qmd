@@ -1,1 +1,21 @@
 # Introduction
+
+## 1.1 Overview
+Wearable devices like Fitbit and Apple Watch have moved far beyond step counting. They now continuously record signals such as heart rate, electrodermal activity, skin temperature, and movement. This makes it possible to look at how **stress and recovery** change across the day in everyday settings, not just in the lab.
+
+In this project, we utilize open wearable-sensor datasets to explore daily rhythms in stress and recovery. The goal is to visualize when stress tends to rise or fall and how physiological recovery aligns with rest or activity.
+
+## 1.2 Research Questions
+This exploratory analysis aims to shed light on the following questions:
+
+1.  **Physiological Patterns**: Do stress levels (measured by EDA and HR) follow distinguishable patterns compared to baseline states?
+2.  **Contextual Differences**: How does physiological stress differ across contexts (e.g., controlled lab stressors vs. real-world driving)?
+3.  **Daily Rhythms**: Can we observe recovery periods in continuous time-series data?
+
+## 1.3 Data Sources
+To answer these questions, we integrate three distinct datasets:
+* **WESAD**: Multimodal data from a controlled laboratory study.
+* **SWELL-KW**: Office work stress context.
+* **AffectiveROAD**: Real-world driving stress context.
+
+This multi-context approach allows us to compare "pure" physiological stress responses in the lab with "real-world" stress during driving and office work.

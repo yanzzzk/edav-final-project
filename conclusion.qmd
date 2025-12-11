@@ -1,1 +1,39 @@
 # Conclusion
+
+In this project, we explored the physiological signatures of stress across laboratory, office, and driving contexts. By integrating three multimodal datasets (WESAD, SWELL-KW, AffectiveROAD), we successfully visualized the daily rhythms of stress and recovery.
+
+## 4.1 Key Findings
+
+Our exploratory analysis yielded three major data-driven insights:
+
+**1. EDA is the "Golden Signal" for Binary Stress Detection**
+Our visualization clearly identified Electrodermal Activity (EDA) as the most robust differentiator.
+* **Visual Evidence**: In the boxplots (Fig 3.1) and time-series analysis (Fig 3.5), the "Stress" condition consistently exhibited a median EDA significantly higher than the "Baseline" state.
+* **Feature Space**: The 2D scatter plot (Fig 3.7) revealed that while body temperature showed overlap between states, **stress samples formed a distinct cluster** in the high-EDA region (typically > 5 μS in our normalized scale), suggesting that EDA alone captures the majority of the variance needed for classification.
+
+**2. The "Context Gap" in Data Quality**
+Comparing the WESAD (Lab) and AffectiveROAD (Driving) datasets revealed a fundamental challenge in real-world deployment.
+* **Distribution Shape**: As shown in the cross-context density plots (Fig 3.8), laboratory physiological signals followed cleaner, quasi-normal distributions.
+* **Real-World Noise**: In contrast, the driving heart rate data exhibited **higher entropy and wider variance** (as seen in the error bars of Fig 3.3). This suggests that models trained solely on clean lab data (like WESAD) would likely suffer from high false-positive rates when deployed in erratic real-world driving scenarios.
+
+**3. Physiological Rhythms are Highly Individualized**
+The ridge plots (Fig 3.2) highlighted that there is no universal "stress threshold." Subject S2’s baseline heart rate might be equal to Subject S3’s stress heart rate. This confirms that **relative change** (normalized against an individual's own baseline) is a far more reliable metric than absolute physiological values.
+
+## 4.2 Limitations
+
+Despite the strong visual trends, we acknowledge several limitations:
+
+* **Proxy Metrics**: In the AffectiveROAD dataset, we used heart rate standard deviation as a simplified proxy for Heart Rate Variability (HRV). A more rigorous analysis would require raw Inter-Beat Intervals (IBI) to calculate frequency-domain features (LF/HF ratio).
+* **Sample Imbalance**: The WESAD dataset contains significantly more "Baseline" data than "Stress" data, which is typical for physiological datasets but poses challenges for visualization and future modeling.
+
+## 4.3 Future Directions
+
+Based on these findings, future work should focus on:
+
+1.  **Personalized Normalization**: Developing algorithms that automatically calibrate to a user's resting heart rate within the first hour of wear (Z-score normalization).
+2.  **Multimodal Fusion**: Since Temperature alone was a weak predictor, future models should weigh EDA ~3x more heavily than Temperature, as suggested by our feature space analysis.
+3.  **Recovery Time Analysis**: Investigating the slope of the "Amusement" phase to quantify **Resilience**—measuring how many minutes it takes for EDA to return to baseline after a stress spike.
+
+## 4.4 Final Thoughts
+
+This project demonstrates that while wearable sensors can effectively capture the "rhythms" of human stress, the context is king. The clear signals observed in the lab become noisier in the wild, emphasizing the need for robust, context-aware data science pipelines in the field of Affective Computing.

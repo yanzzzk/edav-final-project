@@ -8,25 +8,51 @@ execute:
   message: false
 
 book:
-  title: "YOUR PROJECT TITLE"
-  author:
-    - AUTHOR1 (UNI1)
-    - AUTHOR2 (UNI2)
-  repo-url: https://github.com/YOUR_GITHUB_ACCOUNT/REPO_NAME
+  title: "Daily Rhythms of Stress"
+  subtitle: "A Wearable-Based Exploration of Physiology and Behavior"
+  author: "Yan Li (yl6037)"
   date: today
-  page-footer:
-    right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>.
-  repo-actions: [edit, issue]
+
+  search: true
+
+  repo-url: https://github.com/yanzzzk/edav-final-project
+  repo-actions: [edit, source]
+
+  sidebar:
+    style: docked
+    background: light
+    collapse-level: 1
+
   chapters:
     - index.qmd
     - data.qmd
     - results.qmd
     - conclusion.qmd
 
+  page-footer:
+    right: |
+      Built with <a href="https://quarto.org/">Quarto</a>
+    left: |
+      &copy; 2023 Yan Li (EDAV Final Project)
+
 format:
   html:
     theme: cosmo
+
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    toc-title: "On this page"
+
     code-fold: true
+    code-summary: "Show Code"
+    code-tools: true
+    code-copy: true
+    code-line-numbers: true
 
+    number-sections: true
 
+    smooth-scroll: true
+
+    link-external-icon: true
+    link-external-newwindow: true
