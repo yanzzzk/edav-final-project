@@ -1,14 +1,11 @@
-
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
 .Rapp.history
 
-
 /.quarto/
 *_cache/
-*_files/
 
 __pycache__/
 *.pyc
